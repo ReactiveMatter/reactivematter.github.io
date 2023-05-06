@@ -1,8 +1,17 @@
 body
-{
+{	display: flex;
 	font-size:16px;
+	background: #fefff7;
+	flex-direction: column;
+	min-height: 100vh;
 }
 .wrapper
-{
+{	flex-grow: 1;
 	padding: 20px;
+}
+
+header, footer
+{
+	padding: 10px 20px;
+	background: lightgoldenrodyellow;
 }
