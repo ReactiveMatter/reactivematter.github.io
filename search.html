@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Search</title>
+</head>
+<style type="text/css">
+	body{font-family: sans-serif,Arial,Verdana,"Trebuchet MS","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"; background: #fafafa;}
+	body *{box-sizing: border-box; line-height: 1.4em; overflow-wrap: break-word;}
+	.wrapper{
+		max-width: 500px;
+		margin:auto;
+		padding: 20px 0px;
+	}
+
+	@media (max-width:500px)
+	{
+		.wrapper{
+		 padding: 20px;
+		 min-width: 350px;
+		}
+
+		#search
+		{
+			width: 100% !important;
+		}
+	}
+	.center
+	{   margin-left: auto;
+		margin-right: auto;
+	}
+	.input-group
+	{
+		width: 100%;
+		max-width: 500px;
+		position: relative;
+	}
+	#search
+	{	font-size: 16px;
+		padding: 0.5em 1em;
+		display: inline;
+		width: 400px;
+		text-decoration: none;
+	}
+	input:focus, select:focus, option:focus, option:hover
+	{
+		outline: none;
+	}
+	button.search-button
+	{	line-height: 1.2em;
+		margin-left:auto;
+		margin-right: auto;
+		font-size: 16px;
+		padding: 0.5em 1em;
+		cursor: pointer;
+		margin-top:15px;
+	}
+	.options
+	{	
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+	.options a, a.button
+	{
+		padding: 0.3em 0.5em;
+		border:1px solid #aaa;
+		border-radius: 2px;
+		cursor: pointer;
+		user-select: none;
+	}
+	.options #search-engine
+	{	font-size: 14px;
+		padding: 0.3em 0.5em;
+		border:1px solid #aaa;
+		border-radius: 2px;
+		cursor: pointer;
+	}
+	.options a:hover, a.button:hover
+	{	
+		border:1px solid #555;
+		background: #eaeaea;
+	}
+	.options span:not(:first-child)
+	{	margin-left: 10px;
+	}
+	input.add
+	{
+		padding: 0.2em 0.3em;
+		margin-top:10px;
+		margin-bottom: 10px;
+	}
+	.viewer>div
+	{
+		margin-top:10px;
+	}
+	.hidden
+	{
+		display: none;
+	}
+</style>
+<body>
+	<div class="wrapper">
+	<div class="input-group center">
+        <input id="search" autocomplete="off" type="search" placeholder="Search" value="" name="q" spellcheck="false">
+          <button class="search-button" title="Search" onclick="initiateSearch()">Search</button>
+    </div>
+    <div class="options"></span><span>
+    	<select id="search-engine" name="Search engine">
+		  <option value="google">Google</option>
+		  <option value="duckduckgo">DuckDuckGo</option>
+		  <option value="bing">Bing</option>
+		</select>
+		<span><a onclick="toggle('.viewer')">More options</a>
+	</span>
+    </div>
+    <div class="viewer hidden">
+    <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exact">
+    <label class="form-check-label" for="exact">Search for exact match</label>
+  	</div>
+  	<div class="form-check">
+    <input type="checkbox" class="form-check-input" id="intitle">
+    <label class="form-check-label" for="intitle">Search in title</label>
+  	</div>
+  	<div class="form-check">
+    <input type="checkbox" class="form-check-input" id="inurl">
+    <label class="form-check-label" for="inurl">Search in url</label>
+  	</div>
+  	<div class="form-check">
+    <input type="checkbox" class="form-check-input" id="file">
+    <label class="form-check-label" for="file">Search for a file</label>
+    <select id="filetype" name="filetype">
+	  <option value="pdf">PDF</option>
+	  <option value="doc">DOC</option>
+	  <option value="docx">DOCX</option>
+	  <option value="ppt">PPT</option>
+	</select>
+  	</div>
+    <div class="includedsites"><b>Search only on specific sites</b>
+    </div>
+    <input type="text" id="addincludedsite" class="add" placeholder="Add site">
+    <div class="excludedsites"><b>Exclude sites</b></div>
+    <input type="text" id="addexcludedsite" class="add" placeholder="Add site">
+     <div class="options"><span><a class="button" onclick="saveSettings()">Save sites</a></span><span><a class="button" onclick="clearSettings()">Clear sites</a></span></div>
+    </div>
+   
+    
+    </div>
+</body>
+<script type="text/javascript">
+	//makes sure that the start function runs only when dom is ready
+	if(document.readyState === "complete" || document.readyState === "interactive") {start();}
+	else {document.addEventListener('DOMContentLoaded', function(){start();});}
+
+	var gi='https://www.google.com/search?q=';
+	var di='https://duckduckgo.com/?q=';
+	var bi='https://www.bing.com/search?q=';
+	var includedsites = [];
+	var excludedsites = [];
+
+	function start()
+	{
+
+	attachEnter("#search", initiateSearch);
+	attachEnter("#addincludedsite", addSite);
+	attachEnter("#addexcludedsite", addSite);
+
+	loadSettings();
+	}
+
+	function attachEnter(query,callback)
+	{
+	var input = document.querySelector(query);
+	input.addEventListener("keyup", function(event) {
+	  // Number 13 is the "Enter" key on the keyboard
+	  if (event.keyCode === 13) {
+	    // Cancel the default action, if needed
+	    event.preventDefault();
+	    // Trigger the button element with a click
+	    callback(event);
+	  }
+	});
+	}
+
+
+	function initiateSearch()
+	{	
+		let q=document.querySelector('#search').value.trim();
+		if(q && q.length>0)
+		{	let link="";
+			getSettings();
+			if(document.querySelector("#search-engine").value=="google")
+			{q=generateQuery(q);
+			 link=gi+q;
+			}
+			else if(document.querySelector("#search-engine").value=="duckduckgo")
+			{
+			 q=generateQuery(q);
+			 link=di+q;
+			}
+			else if(document.querySelector("#search-engine").value=="bing")
+			{
+			 q=generateQuery(q);
+			 link=bi+q;
+			}
+
+			window.open(link, '_blank');
+			
+		}
+	}
+
+	function generateQuery(q)
+	{	var query=q;
+		if(document.querySelector("#exact").checked)
+		{
+			query=quote(query);
+		}
+		if(document.querySelector("#intitle").checked)
+		{
+			query=query+" intitle:"+q;
+		}
+		if(document.querySelector("#inurl").checked)
+		{
+			query=query+" inurl:"+q;
+		}
+
+		includedsites.forEach(function(a)
+		{ if(a.active)
+			{
+				query=query+" site:"+a.site;
+			}
+
+		});
+		excludedsites.forEach(function(a)
+		{	if(a.active)
+			{
+				query=query+" -site:"+a.site;
+			}
+
+		});
+
+
+		if(document.querySelector("#file").checked)
+		{
+		  let filetype=document.querySelector("#filetype").value;
+		  query=query+' filetype:'+filetype;	  
+		}
+
+		return query;
+	}
+
+	function quote(s)
+	{return '"'+s+'"';}
+
+	//To toggle visibility state of a element
+	function toggle(query)
+	{
+		if(document.querySelector(query).classList.contains("hidden"))
+		{document.querySelector(query).classList.remove("hidden");}
+		else{document.querySelector(query).classList.add("hidden");}
+	}
+
+	function loadSettings()
+	{
+		if(localStorage.getItem("includedsites"))
+		{
+			includedsites=JSON.parse(localStorage.getItem("includedsites"));
+		}
+		else
+		{
+		includedsites.push({site:"wikipedia.org", active:false});
+		includedsites.push({site:"quora.com", active:false});
+		includedsites.push({site:"stackoverflow.com", active:false});
+		}
+
+		if(localStorage.getItem("exclusedsites"))
+		{
+		 excludedsites=JSON.parse(localStorage.getItem("includedsites"));
+		}
+		else
+		{
+		excludedsites.push({site:"wikipedia.org", active:false});
+		excludedsites.push({site:"quora.com", active:false});
+		excludedsites.push({site:"stackoverflow.com", active:false});
+		}
+
+		includedsites.forEach(function(a)
+		{	
+			let code='<div class="form-check"><input type="checkbox" class="form-check-input site" id="i-'+getIDforSite(a.site)+'" data-value="'+a.site+'">';
+	        code = code+'<label class="form-check-label" for="i-'+getIDforSite(a.site)+'">'+a.site+'</label></div>';
+	        document.querySelector(".includedsites").insertAdjacentHTML("beforeend",code);
+		});
+
+		excludedsites.forEach(function(a)
+		{	
+			let code='<div class="form-check"><input type="checkbox" class="form-check-input site" id="e-'+getIDforSite(a.site)+'" data-value="'+a.site+'">';
+	        code = code+'<label class="form-check-label" for="e-'+getIDforSite(a.site)+'">'+a.site+'</label></div>';
+	        document.querySelector(".excludedsites").insertAdjacentHTML("beforeend",code);
+		});
+	}
+
+	function getSettings()
+	{ 
+	  let includedsitesNew=[];
+	  let excludedsitesNew=[];
+	  if(document.querySelector(".includedsites .site")){
+	  document.querySelectorAll(".includedsites .site").forEach(function(a){
+	  let b={};
+	  b.site=a.getAttribute("data-value");
+	  b.active=a.checked;
+	  includedsitesNew.push(b);
+	  });
+	  includedsites=includedsitesNew;
+	 }
+	  if(document.querySelector(".excludedsites .site"))
+	  {document.querySelectorAll(".excludedsites .site").forEach(function(a){
+	  	let b={};
+	  b.site=a.getAttribute("data-value");
+	  b.active=a.checked;
+	  excludedsitesNew.push(b);
+	  });
+	  excludedsites=excludedsitesNew;
+	 }
+	}
+
+function saveSettings()
+{	getSettings();
+	localStorage.setItem("includedsites",JSON.stringify(includedsites));
+	localStorage.setItem("excludedsites",JSON.stringify(excludedsites));
+}
+
+function clearSettings()
+{	includedsites=[];
+	excludedsites=[];
+	localStorage.clear();
+	document.querySelectorAll("input[type=checkbox").forEach(function(e){e.checked=false;});
+	document.querySelectorAll(".includedsites .form-check, .excludedsites .form-check").forEach(function(e){e.textContent="";});
+	loadSettings();
+
+}
+
+function getIDforSite(site)
+{	site=site.split(".").join("-")
+	site=site.split("/").join("-")
+	return site;
+}
+
+function addSite(e)
+{	ele=e.target;
+	if(ele.id === "addincludedsite")
+	{	
+		if(ele.value.trim().length>0)
+		{ let s=ele.value.trim();
+		if(is_url(s))
+		{
+			let code='<div class="form-check"><input type="checkbox" class="form-check-input site" checked id="i-'+getIDforSite(s)+'" data-value="'+s+'">';
+	        code = code+'<label class="form-check-label" for="i-'+getIDforSite(s)+'">'+s+'</label></div>';
+	        document.querySelector(".includedsites").insertAdjacentHTML("beforeend",code);
+		}		
+	    }
+	}
+	else if(ele.id === "addexcludedsite")
+	{
+		if(ele.value.trim().length>0)
+		{ let s=ele.value.trim();
+		if(is_url(s))
+		{
+			let code='<div class="form-check"><input type="checkbox" class="form-check-input site" checked id="e-'+getIDforSite(s)+'" data-value="'+s+'">';
+	        code = code+'<label class="form-check-label" for="e-'+getIDforSite(s)+'">'+s+'</label></div>';
+	        document.querySelector(".excludedsites").insertAdjacentHTML("beforeend",code);
+		}		
+	    }
+	}
+
+	ele.value="";
+}
+
+
+function is_url(str)
+{
+  regexp =  /^(?:(?:https?|ftp):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+        if (regexp.test(str))
+        {
+          return true;
+        }
+        else
+        {
+          return false;
+        }
+}
+</script>
