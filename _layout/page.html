@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>ReactiveMatter</title>
+	<title>{{page.title}} | {{site.title}}</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/assets/css/bootstrap.min.css" integrity="sha512-UVQYZVYu7WhHEaO2xGEmc4/3F8ctnXt4jwfGl2MCIHKc95RMgYS8yfNJ3j6wUe0UGiTK0S3vcmh3Ml9h278x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<link rel="stylesheet" href="style.css"/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-bootstrap/0.5pre/js/jquery-1.8.3.min.js" integrity="sha512-J9QfbPuFlqGD2CYVCa6zn8/7PEgZnGpM5qtFOBZgwujjDnG5w5Fjx46YzqvIh/ORstcj7luStvvIHkisQi5SKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -11,18 +11,16 @@
 </head>
 <body>
 <header>
-<span class="site-name">ReactiveMatter<span>
+<span class="site-name">{{site.title}}<span>
 </header>
 <div class="wrapper">
-<h2>My projects</h2>
-<ul>
-<li><a href="/locker/locker.html">Locker</a>: To save passwords, notes and journals with encryption.</li>
-<li><a href="crypt.html">Crypt</a>: Encrypt and decrypt messages</li>
-<li><a href="search.html">Search</a>: Search modifiers on popular search engines</li>
-</ul>
+<div class="page">
+<h2>{{page.title}}</h2>
+{{content}}
+</div>
 </div>
 <footer>
-	(c) ReactiveMatter
+	© ReactiveMatter
 </footer>
 </body>
 </html>
