@@ -36,14 +36,19 @@ header, footer
 	margin: auto auto;
 }
 
-.site-name a
+.site-name a, .nav-item a
 {
 	color:#555;
 	font-weight: bold;
 }
-.site-name a:hover
+.site-name a:hover, .nav-item a:hover
 {
 	color:#333;
 	text-decoration: none;
 	cursor: pointer;
+}
+
+.nav-item a
+{
+	font-weight: normal;
 }
