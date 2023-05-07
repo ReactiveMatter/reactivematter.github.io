@@ -7,10 +7,16 @@ body
 	line-height: 1.5;
 }
 
+ul, ol, p
+{
+	margin-top:1rem;
+	maring-bottom:1rem;
+}
+
 li 
 {
-	margin-top:0.2rem;
-	maring-bottom:0.2rem;
+	margin-top:0.5rem;
+	maring-bottom:0.5rem;
 }
 
 .wrapper
@@ -30,14 +36,14 @@ header, footer
 	margin: auto auto;
 }
 
-.sitle-name a
+.site-name a
 {
-	color:black;
+	color:#555;
 	font-weight: bold;
 }
-.sitle-name a:hover
+.site-name a:hover
 {
-	color: black;
+	color:#333;
 	text-decoration: none;
 	cursor: pointer;
 }
