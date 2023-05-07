@@ -51,4 +51,5 @@ header, footer
 .nav-item a
 {
 	font-weight: normal;
+	margin: 0px 10px;
 }
