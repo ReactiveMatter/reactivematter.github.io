@@ -21,3 +21,15 @@ header, footer
 	max-width: 1012px;
 	margin: auto auto;
 }
+
+.sitle-title a
+{
+	color:black;
+	font-weight: bold;
+}
+.sitle-title a:hover
+{
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
