@@ -1,5 +1,6 @@
 ---
-Title: My projects
+title: My projects
+layout: page
 ---
 - [Locker](/locker/locker.html): To save passwords, notes and journals with encryption.
 - [Crypt](crypt): Encrypt and decrypt messages
