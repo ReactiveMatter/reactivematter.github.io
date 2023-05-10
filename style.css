@@ -32,7 +32,13 @@ header, footer
 	box-shadow: 0px 0px 1px 0px;
 }
 
-.page
+.container
+{
+	margin: initial;
+	padding: initial;
+}
+
+.page, .container
 {
 	max-width: 1012px;
 	margin: auto auto;
