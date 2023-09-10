@@ -12,10 +12,10 @@ layout: page
 # Pinned Pages
 - [Fallacies](fallacies)
 
-# All pages
+# All pages --
 {{% for p in site.posts %}}
 <li>
-    <a href="{{p.url}}">{{p.title}}</a>
+    <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
 {{% endfor %}}
 
@@ -23,7 +23,7 @@ layout: page
 {{% for p in site.posts %}}
 {{% if p.layout=="blog" %}}
 <li>
-    <a href="{{p.url}}">{{p.title}}</a>
+    <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
 {{% endif %}}
 {{% endfor %}}
