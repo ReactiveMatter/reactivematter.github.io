@@ -9,19 +9,8 @@ layout: page
 - [Search](search): Search modifiers on popular search engines
 - [Internet explorer](internet-explorer): A catalogue of things found on internet.
 
-# Pinned Pages
-- [Fallacies](fallacies)
-
 # Pages
-<ul>
-{% for p in site.pages %}
-{% if p.layout=="page" %}
-<li>
-    <a href="{{ p.url }}">{{ p.title }}</a>
-</li>
-{% endif %}
-{% endfor %}
-</ul>
+- [Fallacies](fallacies)
 
 # Blogs
 <ul>
