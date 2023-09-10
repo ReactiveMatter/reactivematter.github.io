@@ -4,9 +4,6 @@ layout:	page
 ---
 This page contains curated resources, blogs, apps, etc. from the internet.
 
->[!tip] Check
->Is this a callout?
-
 # Obsidian
 
 Obsidian is a note taking took which saves notes locally in markdown format. It is highly customizable and powerful.
