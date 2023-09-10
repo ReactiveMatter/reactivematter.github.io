@@ -10,4 +10,4 @@ A similar explosion has happened in note-taking apps. From Evernote, to Notion t
 
 Sometimes, too many choices limits us. And having limitations frees us from the pandora of choices. In the context of society, this reminds me of Emile Durkheim's statement that "people are free when their passions are constrained by external forces". Otherwise we become slave to our passions.
 
-But to conclude, I must say, having choices are great. But having too may limits productivity. This has been [studied and proven](https://www.apa.org/news/press/releases/2008/05/many-choices).
+To conclude, I must say, having choices are great. But having too may limits productivity. This has been [studied and proven](https://www.apa.org/news/press/releases/2008/05/many-choices).
