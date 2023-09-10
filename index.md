@@ -29,7 +29,7 @@ layout: page
 {% for p in sorted %}
 {% if p.layout=="blog" %}
 <li>
-    <a href="{{ p.url | replace '.html' ''}}">{{ p.title }}</a>
+    <a href="{{ p.permalink }}">{{ p.title }}</a>
 </li>
 {% endif %}
 {% endfor %}
