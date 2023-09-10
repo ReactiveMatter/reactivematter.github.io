@@ -13,13 +13,16 @@ layout: page
 - [Fallacies](fallacies)
 
 # All pages
+<ul>
 {% for p in site.posts %}
 <li>
     <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
 {% endfor %}
+</ul>
 
 # All blogs
+<ul>
 {% for p in site.posts %}
 {% if p.layout=="blog" %}
 <li>
@@ -27,3 +30,4 @@ layout: page
 </li>
 {% endif %}
 {% endfor %}
+</ul>
