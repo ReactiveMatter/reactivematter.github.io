@@ -25,8 +25,9 @@ layout: page
 
 # Blogs
 <ul>
-{% for p in site.pages | sort: "date", "last" %}
-{% if p.layout=="blog" %}
+{% assign sorted = site.pages | sort: 'date' | reverse %}
+{% for p in sorted %}
+{% if p.layout="blog" %}
 <li>
     <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
