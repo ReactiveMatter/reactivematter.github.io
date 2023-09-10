@@ -11,3 +11,12 @@ layout: page
 
 # Pages
 - [Fallacies](fallacies)
+
+# All pages
+{{% for p in posts %}}
+<li>
+    <a href="{{p.url}}">{{p.title}}</a>
+  </li>
+{{% endfor %}}
+
+# All blogs
