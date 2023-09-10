@@ -15,7 +15,7 @@ layout: page
 # Pages
 <ul>
 {% for p in site.pages %}
-% if p.layout=="page" %}
+{% if p.layout=="page" %}
 <li>
     <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
