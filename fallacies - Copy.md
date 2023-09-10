@@ -1,7 +1,7 @@
 ---
 title: Fallacies
 layout: blog
-date: 2023-09-10
+date: 2023-09-08
 ---
 
 - A fallacy is just a mistake in reasoning.
