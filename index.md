@@ -14,7 +14,7 @@ layout: page
 
 # All pages
 <ul>
-{% for p in site.posts %}
+{% for p in site.pages %}
 <li>
     <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
