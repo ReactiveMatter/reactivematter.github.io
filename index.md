@@ -12,7 +12,7 @@ layout: page
 # Pinned Pages
 - [Fallacies](fallacies)
 
-# All pages --
+# All pages
 {% for p in site.posts %}
 <li>
     <a href="{{ p.url }}">{{ p.title }}</a>
