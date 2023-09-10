@@ -2,7 +2,10 @@
 title:	Internet explorer
 layout:	page
 ---
+
+<div class="box red">
 This page contains curated resources, blogs, apps, etc. from the internet.
+</div>
 
 # Obsidian
 
