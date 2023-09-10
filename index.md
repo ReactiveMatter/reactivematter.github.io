@@ -24,4 +24,4 @@ layout: page
 {% endfor %}
 </ul>
 
-<p class="muted">See [all pages](all-pages/)</p>
+See [all pages](all-pages/).
