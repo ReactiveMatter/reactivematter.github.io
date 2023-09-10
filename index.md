@@ -12,7 +12,7 @@ layout: page
 # Pinned Pages
 - [Fallacies](fallacies)
 
-# All pages
+# Pages
 <ul>
 {% for p in site.pages %}
 % if p.layout=="page" %}
@@ -23,7 +23,7 @@ layout: page
 {% endfor %}
 </ul>
 
-# All blogs
+# Blogs
 <ul>
 {% for p in site.pages | sort: "date", "last" %}
 {% if p.layout=="blog" %}
