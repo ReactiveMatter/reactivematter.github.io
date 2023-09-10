@@ -81,8 +81,8 @@ header, footer
 {
     background: #fafafa;
     border: 1px solid #bdbdbd;
-    padding: 0.5em 1em 0em;
-    margin-bottom:1em;
+    border-radius:4px;
+    padding: 0.5em 1em;
 }
 .blue.box
 {
@@ -105,4 +105,43 @@ header, footer
     border: 1px solid #81c784;
     padding: 0.5em 1em 0em;
     margin-bottom:1em;
+}
+
+.box:first-child
+{
+    margin-top:0;
+}
+.box>*:first-child
+{
+    margin-top:0;
+}
+.box>*:last-child
+{
+    margin-bottom:0;
+}
+
+.box.side
+{
+    width:300px;
+    margin-top:0;
+    margin-bottom:0.5em;
+    float:right;
+}
+.box.side.big
+{
+    width:400px;
+}
+.box.side
+{
+    margin-left:1em;
+}
+.box.side.left
+{
+    margin-right:1em;
+}
+
+.box img
+{
+    max-width:100%;
+    height:auto;
 }
