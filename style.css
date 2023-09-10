@@ -76,3 +76,33 @@ header, footer
 	font-weight: normal;
 	margin: 0px 10px;
 }
+
+.box
+{
+    background: #fafafa;
+    border: 1px solid #bdbdbd;
+    padding: 0.5em 1em 0em;
+    margin-bottom:1em;
+}
+.blue.box
+{
+    background: #e3f2fd;
+    border: 1px solid #64b5f6;
+    padding: 0.5em 1em 0em;
+    margin-bottom:1em;
+}
+
+.red.box
+{
+    background: #ffebee;
+    border: 1px solid #e57373;
+    padding: 0.5em 1em 0em;
+    margin-bottom:1em;
+}
+.green.box
+{
+    background: #e8f5e9;
+    border: 1px solid #81c784;
+    padding: 0.5em 1em 0em;
+    margin-bottom:1em;
+}
