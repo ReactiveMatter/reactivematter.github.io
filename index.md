@@ -15,16 +15,7 @@ layout: page
 # All pages
 <ul>
 {% for p in site.pages %}
-<li>
-    <a href="{{ p.url }}">{{ p.title }}</a>
-</li>
-{% endfor %}
-</ul>
-
-# All blogs
-<ul>
-{% for p in site.posts %}
-{% if p.layout=="blog" %}
+% if p.layout=="page" %}
 <li>
     <a href="{{ p.url }}">{{ p.title }}</a>
 </li>
@@ -32,12 +23,13 @@ layout: page
 {% endfor %}
 </ul>
 
-# Default
-
+# All blogs
 <ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
+{% for p in site.pages %}
+{% if p.layout=="blog" %}
+<li>
+    <a href="{{ p.url }}">{{ p.title }}</a>
+</li>
+{% endif %}
+{% endfor %}
 </ul>
