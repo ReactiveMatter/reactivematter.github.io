@@ -6,3 +6,6 @@ layout: page
 - [Crypt](crypt): Encrypt and decrypt messages
 - [Search](search): Search modifiers on popular search engines
 - [Internet explorer](internet-explorer): A catalogue of things found on internet.
+
+## Pages
+- [[Fallacies]]
