@@ -109,6 +109,6 @@ layout: page
 - So, as a general rule, it’s problematic to treat emotions as if they were (by themselves) infallible proof that something is true or false.
 
 # Resources
-- https://ad.hominem.info/en/index
-- http://www.fallacyfiles.org/taxonomy.html
-- https://www.logicalfallacies.org/
+- <https://ad.hominem.info/en/index>
+- <http://www.fallacyfiles.org/taxonomy.html>
+- <https://www.logicalfallacies.org>

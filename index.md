@@ -8,4 +8,4 @@ layout: page
 - [Internet explorer](internet-explorer): A catalogue of things found on internet.
 
 ## Pages
-- [[fallacies]]
+- [Fallacies](Fallacies)
