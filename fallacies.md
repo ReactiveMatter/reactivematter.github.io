@@ -1,6 +1,6 @@
 ---
 title: Fallacies
-layout: blog
+layout: post
 date: 2023-09-10
 ---
 
