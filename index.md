@@ -10,7 +10,7 @@ layout: page
 - [Internet explorer](internet-explorer): A catalogue of things found on internet.
 
 # Pages
-- [Fallacies](fallacies)
+- [Fallacies](fallacies/)
 
 # Blogs
 <ul>
@@ -23,3 +23,5 @@ layout: page
 {% endif %}
 {% endfor %}
 </ul>
+
+<p class="muted">See [all pages](all-pages/)</p>
