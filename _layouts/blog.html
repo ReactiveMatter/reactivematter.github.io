@@ -23,7 +23,7 @@
 <h1 class="title">{{page.title}}</h1>
 {% assign topic_sentence = '' %}
 {% if page.topics %}
-    {% assign topic_sentence= 'This post is about ' %}
+    {% assign topic_sentence= '' %}
     {% assign last =  page.topics.size | minus: 1 %}
     {% assign topics =  page.topics | sort %}
     {% for topic in topics %}
@@ -37,16 +37,17 @@
         {% endif %}
     {% endfor %}
 {% elsif page.topic %}
-    {% assign topic_sentence = 'This post is about ' | append: page.topic %}
+    {% assign topic_sentence = '' | append: page.topic %}
 {% else %}
     {% assign topic_sentence = '' %}
 {% endif %}
 
 {% if topic_sentence != ''%}
-<p class="muted">{{page.date}} <span class="topic">{{topic_sentence}}</span></p>
+<p class="muted">{{page.date}} <span class="topic">This post is about {{topic_sentence}}</span></p>
 {% else %}
 <p class="muted">{{page.date}}</span></p>
 {% endif %}
+
 {{content}}
 </div>
 </div>
