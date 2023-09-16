@@ -3,6 +3,9 @@ title: Coding
 topic: coding
 layout: page
 ---
+
+The list of blogs on the topic of {{ page.topic }} -
+
 <ul>
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for p in sorted %}
