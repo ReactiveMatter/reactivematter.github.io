@@ -1,20 +1,22 @@
 ---
-title: Blog
+title: Topic > Note taking
+topic: note-making
 layout: page
 ---
-
-The list of all my blogs -
-
 <ul>
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for p in sorted %}
 {% if p.layout=="blog" %}
 {% assign topic_sentence = ' ' %}
+{% assign to_include = false %}
 {% if p.topics %}
     {% assign topic_sentence= 'is about ' %}
     {% assign last =  p.topics.size | minus: 1 %}
     {% assign topics =  p.topics | sort %}
-    {% for topic in topics %} 
+    {% for topic in topics %}
+        {% if topic == page.topic %}
+        {% assign to_include = true %}
+        {% endif %}
         {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
         {% assign topic_sentence = topic_sentence  | append: topic %}
         {% assign topic_sentence = topic_sentence  | append: "'>" %}
@@ -29,6 +31,9 @@ The list of all my blogs -
         {% endif %}
     {% endfor %}
 {% elsif p.topic %}
+    {% if topic == page.topic %}
+    {% assign to_include = true %}
+    {% endif %}
     {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
     {% assign topic_sentence = topic_sentence  | append: p.topic %}
     {% assign topic_sentence = topic_sentence  | append: "'>" %}
@@ -37,9 +42,12 @@ The list of all my blogs -
 {% else %}
     {% assign topic_sentence = ' ' %}
 {% endif %}
+
+{% if to_include %}
 <li>
 <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {{topic_sentence}}</span>
 </li>
+{% endif %}
 {% endif %}
 {% endfor %}
 </ul>
