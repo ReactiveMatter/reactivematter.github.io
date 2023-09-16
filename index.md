@@ -21,7 +21,7 @@ layout: page
 {% for p in sorted %}
 {% if p.layout=="blog" %}
 <li>
-    <a href="{{ p.url}}">{{ p.title }}</a>
+    <a href="{{ p.url}}">{{ p.title }}</a> ({{p.date}})
 </li>
 {% endif %}
 {% endfor %}
