@@ -15,8 +15,12 @@ The list of all my blogs -
     {% assign topic_sentence= 'is about ' %}
     {% assign last =  p.topics.size | minus: 1 %}
     {% assign topics =  p.topics | sort %}
-    {% for topic in topics %}
-        {% assign topic_sentence = topic_sentence | append: topic %}
+    {% for topic in topics %} 
+        {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
+        {% assign topic_sentence = topic_sentence  | append: topic %}
+        {% assign topic_sentence = topic_sentence  | append: "'>" %}
+        {% assign topic_sentence = topic_sentence  | append: topic %}
+        {% assign topic_sentence = topic_sentence  | append: "</a>" %}
         {% if forloop.index < last %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
         {% elsif forloop.index == last %}
@@ -26,7 +30,11 @@ The list of all my blogs -
         {% endif %}
     {% endfor %}
 {% elsif p.topic %}
-    {% assign topic_sentence = 'is about ' | append: p.topic %}
+    {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
+    {% assign topic_sentence = topic_sentence  | append: p.topic %}
+    {% assign topic_sentence = topic_sentence  | append: "'>" %}
+    {% assign topic_sentence = topic_sentence  | append: p.topic %}
+    {% assign topic_sentence = topic_sentence  | append: "</a>" %}
 {% else %}
     {% assign topic_sentence = ' ' %}
 {% endif %}

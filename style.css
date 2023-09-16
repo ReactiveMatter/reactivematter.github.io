@@ -83,6 +83,11 @@ header, footer
     padding-right: 5px;
 }
 
+.page a.topic-link
+{
+	color: inherit;
+}
+
 .box
 {
     background: #fafafa;
