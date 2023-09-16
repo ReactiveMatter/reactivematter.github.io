@@ -10,6 +10,6 @@ Few months ago, I discovered [Obsidian](https://obsidian.md), and I am awestruck
 
 Therefore, I decided to migrate from Dokuwiki to Obsidian. During the process I have created a python script which converts my Dokuwiki notes.
 
-You can find the python script at https://github.com/ReactiveMatter/dokuwiki-obsidian.
+You can find the python script at [https://github.com/ReactiveMatter/dokuwiki-obsidian](https://github.com/ReactiveMatter/dokuwiki-obsidian).
 
 If you want to use Dokuwiki as you publishing platform from Obsidian, you can use [Obsidian-2-Dokuwiki](https://github.com/vzeller/obsidian2dokuwiki) script by vzeller.
