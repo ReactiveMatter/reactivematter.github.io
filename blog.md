@@ -21,10 +21,9 @@ The list of all my blogs -
         {% else %}
             {% assign topic_sentence = topic_sentence %}
         {% endif %}
-        }
     {% endfor %}
     {% endif %}
-    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}})</span> {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}
+    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}</span>
 </li>
 {% endif %}
 {% endfor %}
