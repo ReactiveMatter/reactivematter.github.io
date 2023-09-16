@@ -1,6 +1,6 @@
 ---
 title: Topic > Note taking
-topic: note-making
+topic: note-taking
 layout: page
 ---
 <ul>
