@@ -10,7 +10,22 @@ The list of all my blogs -
 {% for p in sorted %}
 {% if p.layout=="blog" %}
 <li>
-    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}})</span>
+    {% if p.topics %}
+    {% assign t= 'is about '}
+    {% for topic in topics}
+    {% t += topic %}
+    {% if forloop.index == topics.size - 2}
+    {% t+ = ' and '}
+    {% endif %}
+    {% elseif forloop.index < topics.size - 2}
+    {% t+ = ', '}
+    {% endelseif %}
+    {% else %}
+    {% endelse %}
+    {% endfor %}
+    {% endif %}
+    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}})</span> {{t}}
+    }
 </li>
 {% endif %}
 {% endfor %}

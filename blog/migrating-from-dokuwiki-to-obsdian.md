@@ -2,7 +2,7 @@
 title: Migrating from Dokuwiki to Obsdian
 layout: blog
 date: 2023-09-16
-category: notes 
+topics: [note-talking, coding]
 ---
 
 I have been using Dokuwiki for the past 4 years, and it has served me well till now. However, no offline solution in mobile is a very critical limitation to use Dokuwiki as a personal knowlegement management (PKM) app.
