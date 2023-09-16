@@ -27,7 +27,7 @@
     {% assign last =  page.topics.size | minus: 1 %}
     {% assign topics =  page.topics | sort %}
     {% for topic in topics %}
-        {% assign topic_sentence = topic_sentence | append: topic %}
+        {% assign topic_sentence = topic_sentence | append: "<a class='topic-link'>" | append: topic | append: "</a>" %}
         {% if forloop.index < last %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
         {% elsif forloop.index == last %}
