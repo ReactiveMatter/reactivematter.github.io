@@ -3,4 +3,4 @@ title: About
 layout: page
 ---
 
-Hello, I am ReactiveMatter from India.
+Hello, I am ReactiveMatter.
