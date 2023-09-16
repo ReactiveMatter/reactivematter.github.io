@@ -14,17 +14,4 @@ layout: page
 
 - [Fallacies](fallacies/)
 
-### Blogs
-
-<ul>
-{% assign sorted = site.pages | sort: 'date' | reverse %}
-{% for p in sorted %}
-{% if p.layout=="blog" %}
-<li>
-    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}})</span>
-</li>
-{% endif %}
-{% endfor %}
-</ul>
-
 See [all pages](all-pages/).
