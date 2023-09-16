@@ -10,7 +10,7 @@ The list of all my blogs -
 {% for p in sorted %}
 {% if p.layout=="blog" %}
 <li>
-{% assign topic_sentence = ' '}
+{% assign topic_sentence = ' ' %}
 {% if p.topics %}
     {% assign topic_sentence= 'is about ' %}
     {% for topic in p.topics %}
@@ -26,7 +26,7 @@ The list of all my blogs -
 {% elsif p.topic %}
     {% assign topic_sentence = 'is about ' | append: p.topic %}
 {% else %}
-    {% assign topic_sentence = ' '}
+    {% assign topic_sentence = ' ' %}
 {% endif %}
 
 <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {{topic_sentence}}</span>
