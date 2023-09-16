@@ -27,7 +27,7 @@
         {% assign topic_sentence = topic_sentence | append: "<span class='topic'>" | append: topic | append: "</span>" %}
     {% endfor %}
 {% elsif page.topic %}
-    {% assign topic_sentence = 'is about ' | append: append: "<span class='topic'>" | append: page.topic | append: "</span>" %}
+    {% assign topic_sentence = topic_sentence | append:"<span class='topic'>" | append: page.topic | append: "</span>" %}
 {% else %}
     {% assign topic_sentence = '' %}
 {% endif %}
