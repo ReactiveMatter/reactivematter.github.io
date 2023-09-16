@@ -14,7 +14,8 @@ The list of all my blogs -
 {% if p.topics %}
     {% assign topic_sentence= 'is about ' %}
     {% assign last =  p.topics.size | minus: 1 %}
-    {% for topic in p.topics %}
+    {% assign topics =  p.topics | sort %}
+    {% for topic in topics %}
         {% assign topic_sentence = topic_sentence | append: topic %}
         {% if forloop.index < last %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
