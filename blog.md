@@ -15,9 +15,9 @@ The list of all my blogs -
     {% assign topic_sentence= 'is about ' %}
     {% for topic in p.topics %}
         {% assign topic_sentence = topic_sentence | append: topic %}
-        {% if forloop.index < (p.topics.size - 2) %}
+        {% if forloop.index < (p.topics.size | minus: 2) %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
-        {% elsif forloop.index == (p.topics.size - 2) %}
+        {% elsif forloop.index == (p.topics.size | minus: 2) %}
            {% assign topic_sentence = topic_sentence | append: ", and " %}
         {% else %}
             {% assign topic_sentence = topic_sentence %}
