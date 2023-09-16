@@ -22,7 +22,12 @@ The list of all my blogs -
             {% assign topic_sentence = topic_sentence %}
         {% endif %}
     {% endfor %}
+    {% elsif p.topic %}
+        {% assign topic_sentence = 'is about ' | append: p.topic %}
+    {% else %}
+        {% assign topic_sentence = ' '}
     {% endif %}
+
     <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}</span>
 </li>
 {% endif %}
