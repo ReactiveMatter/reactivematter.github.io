@@ -12,15 +12,14 @@ The list of all my blogs -
 <li>
     {% if p.topics %}
     {% assign t= 'is about '}
-    {% for topic in topics}
-    {% t += topic %}
-    {% if forloop.index == topics.size - 2}
-    {% t+ = ' and '}
-    {% elsif forloop.index < topics.size - 2}
-    {% t+ = ', '}
-    {% else %}
-    {% endif %}
-    {% endfor %}
+        {% for topic in topics}
+            {% t += topic %}
+            {% if forloop.index == topics.size - 2}
+                {% t+ = ' and '}
+            {% elsif forloop.index < topics.size - 2}
+                {% t+ = ', '}
+            {% endif %}
+        {% endfor %}
     {% endif %}
     <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}})</span> {{t}}
     }
