@@ -3,6 +3,9 @@ title: Note taking
 topic: note-taking
 layout: page
 ---
+
+The list of blogs with on the topic of {{ page.topic }} -
+
 <ul>
 {% assign sorted = site.pages | sort: 'date' | reverse %}
 {% for p in sorted %}
