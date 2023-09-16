@@ -21,17 +21,6 @@
 <div class="wrapper">
 <div class="page container">
 <h1 class="title">{{page.title}}</h1>
-{% assign topic_sentence = '' %}
-{% if page.topics %}
-    {% for topic in page.topics %}
-        {% assign topic_sentence = topic_sentence | append: "<span class='topic'>" | append: topic | append: "</span>" %}
-    {% endfor %}
-{% elsif page.topic %}
-    {% assign topic_sentence = 'is about ' | append: append: "<span class='topic'>" | append: page.topic | append: "</span>" %}
-{% else %}
-    {% assign topic_sentence = '' %}
-{% endif %}
-<p class="muted">{{page.date}}</p>
 {{content}}
 </div>
 </div>
