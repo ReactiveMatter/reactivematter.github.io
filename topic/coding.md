@@ -1,6 +1,6 @@
 ---
-title: Note taking
-topic: note-taking
+title: Coding
+topic: coding
 layout: page
 ---
 <ul>
@@ -45,7 +45,7 @@ layout: page
 
 {% if to_include %}
 <li>
-<a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {{topic_sentence}}</span>
+<a href="{{ p.url }}">{{ p.title }}</a> <span class="muted">({{p.date}}) {{topic_sentence}}</span>
 </li>
 {% endif %}
 {% endif %}
