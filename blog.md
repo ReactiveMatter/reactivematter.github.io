@@ -12,18 +12,18 @@ The list of all my blogs -
 <li>
     {% if p.topics %}
     {% assign topic_sentence= 'is about ' %}
-    {% for topic in topics %}
+    {% for topic in p.topics %}
         {% assign topic_sentence = topic_sentence | append: topic %}
-        {% if forloop.index < topic_count - 2 %}
+        {% if forloop.index < p.topics.size - 2 %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
-        {% elsif forloop.index == topic_count - 2 %}
+        {% elsif forloop.index == p.topics.size - 2 %}
            {% assign topic_sentence = topic_sentence | append: ", and " %}
         {% else %}
             {% assign topic_sentence = topic_sentence %}
         {% endif %}
     {% endfor %}
     {% endif %}
-    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) ({{p.topics}}) {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}</span>
+    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}</span>
 </li>
 {% endif %}
 {% endfor %}
