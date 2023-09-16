@@ -18,6 +18,8 @@ The list of all my blogs -
                 {% t+ = ' and '}
             {% elsif forloop.index < topics.size - 2}
                 {% t+ = ', '}
+            {% else %}
+                {% t+= '' %}
             {% endif %}
         {% endfor %}
     {% endif %}
