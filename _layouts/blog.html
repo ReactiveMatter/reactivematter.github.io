@@ -23,16 +23,26 @@
 <h1 class="title">{{page.title}}</h1>
 {% assign topic_sentence = '' %}
 {% if page.topics %}
-	{% assign topics = page.topics | sort %}
+    {% assign topic_sentence= '' %}
+    {% assign last =  page.topics.size | minus: 1 %}
+    {% assign topics =  page.topics | sort %}
     {% for topic in topics %}
-        {% assign topic_sentence = topic_sentence | append: "<span class='topic'>" | append: topic | append: "</span>" %}
+        {% assign topic_sentence = topic_sentence | append: topic %}
+        {% if forloop.index < last %}
+           {% assign topic_sentence = topic_sentence | append: ", " %}
+        {% elsif forloop.index == last %}
+           {% assign topic_sentence = topic_sentence | append: ", and " %}
+        {% else %}
+            {% assign topic_sentence = topic_sentence %}
+        {% endif %}
     {% endfor %}
 {% elsif page.topic %}
-    {% assign topic_sentence = topic_sentence | append:"<span class='topic'>" | append: page.topic | append: "</span>" %}
+    {% assign topic_sentence = '' | append: page.topic %}
 {% else %}
     {% assign topic_sentence = '' %}
 {% endif %}
-<p class="muted">{{page.date}}{{topic_sentence}}</p>
+
+<p class="muted">{{page.date}} <span class="topic:">This post is about {{topic_sentence}}</span></p>
 {{content}}
 </div>
 </div>
