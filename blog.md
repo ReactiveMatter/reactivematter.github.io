@@ -16,12 +16,10 @@ The list of all my blogs -
     {% t += topic %}
     {% if forloop.index == topics.size - 2}
     {% t+ = ' and '}
-    {% endif %}
-    {% elseif forloop.index < topics.size - 2}
+    {% elsif forloop.index < topics.size - 2}
     {% t+ = ', '}
-    {% endelseif %}
     {% else %}
-    {% endelse %}
+    {% endif %}
     {% endfor %}
     {% endif %}
     <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}})</span> {{t}}
