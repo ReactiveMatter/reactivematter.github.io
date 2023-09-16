@@ -13,12 +13,12 @@ The list of all my blogs -
 {% assign topic_sentence = ' ' %}
 {% if p.topics %}
     {% assign topic_sentence= 'is about ' %}
-    {% assign second_last =  p.topics.size | minus: 2 %}
+    {% assign last =  p.topics.size | minus: 1 %}
     {% for topic in p.topics %}
         {% assign topic_sentence = topic_sentence | append: topic %}
-        {% if forloop.index < second_last %}
+        {% if forloop.index < last %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
-        {% elsif forloop.index == second_last %}
+        {% elsif forloop.index == last %}
            {% assign topic_sentence = topic_sentence | append: ", and " %}
         {% else %}
             {% assign topic_sentence = topic_sentence %}
