@@ -23,7 +23,7 @@ The list of all my blogs -
         {% endif %}
     {% endfor %}
     {% endif %}
-    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}</span>
+    <a href="{{ p.url}}">{{ p.title }}</a> <span class="muted">({{p.date}}) ({{p.topics}}) {% capture topic_sentence %}{{topic_sentence}}{% endcapture %}</span>
 </li>
 {% endif %}
 {% endfor %}
