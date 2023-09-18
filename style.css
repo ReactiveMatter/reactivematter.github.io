@@ -8,12 +8,13 @@ body
 	padding: 0px !important;
 }
 
+
 body{
 --inline-title-size: 2.1em;
 --h1-size:1.75em;
---h2-size:1.5em;
---h3-size:1.375em;
---h4-size:1.25em;
+--h2-size:1.4em;
+--h3-size:1.25em;
+--h4-size:1.1em;
 /*--callout-border-width: 1px;*/
 }
 

@@ -15,4 +15,12 @@ To make most of the Obsidian, I use [Dataview](https://blacksmithgu.github.io/ob
 
 ## Bludit
 
-[Bludit](https://www.bludit.com/) is flat file CMS which store in flat files. It supports markdown and WYSIWYG editor mode. It is highly customizable, and blazingly fast.
+[Bludit](https://www.bludit.com/) is flat file CMS which stores content in flat files. It supports markdown and WYSIWYG editor mode. It is highly customizable, and blazingly fast.
+
+## Github pages
+
+[Github](https://pages.github.com/) pages allow you publish you markdown files on github. It generates a static html site using Jekyll.
+
+## Dokuwiki
+
+[Dokuwiki](https://www.dokuwiki.org/dokuwiki) is a wiki software built in PHP which stores content in flat files.
