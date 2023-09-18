@@ -19,7 +19,7 @@ To make most of the Obsidian, I use [Dataview](https://blacksmithgu.github.io/ob
 
 ## Github pages
 
-[Github](https://pages.github.com/) pages allow you publish you markdown files on github. It generates a static html site using Jekyll.
+[Github](https://pages.github.com/) pages allow to publish markdown files on github. It generates a static html site using Jekyll.
 
 ## Dokuwiki
 
