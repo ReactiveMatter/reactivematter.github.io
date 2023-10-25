@@ -168,7 +168,7 @@ body
   --banner-height: 250px;
 }
 
-.image-embed.cc-banner
+.image-embed.banner
 {
   max-height: var(--banner-height) !important;
   width: 100%;
@@ -177,17 +177,17 @@ body
   overflow: hidden;
 }
 
-.image-embed.cc-banner-start
+.image-embed.banner-start
 {
   align-items: start;
 }
 
-.image-embed.cc-banner-end
+.image-embed.banner-end
 {
   align-items: end;
 }
 
-.image-embed.cc-banner img
+.image-embed.banner img
 {
  width: 100%;
 }
