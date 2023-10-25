@@ -4,6 +4,9 @@ layout: blog
 date: 2023-10-25
 topic: opinion
 ---
+<div class=".image-embed">
+!(Image of war)[./media/war.webp]{: .cc-banner}
+</div>
 
 The world is seeing another war, this time between [Israel and Palestine](https://en.wikipedia.org/wiki/Israeli–Palestinian_conflict). Hamas is the organisation which governs a part of Palestine called Gaza strip. Other parts of Palestine are under the occupation of Israel.
 
