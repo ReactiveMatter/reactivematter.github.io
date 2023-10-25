@@ -2,7 +2,7 @@
 title: The times of war
 layout: blog
 date: 2023-10-25
-topic: Opinion
+topic: opinion
 ---
 
 The world is seeing another war, this time between Israel and Palestine. Hamas is the organisation which governs a part of Palestine called Gaza strip. Other parts of Palestine are under the occupation of Israel.
