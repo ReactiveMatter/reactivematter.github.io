@@ -28,6 +28,6 @@ During times of war, neutrality is looked as bad. The following are some famous 
 
 But the problem with this notion is that it reduces the options to choosing either of the side, when infact there as more options such as "condemn the act of war itself". It is a false dichotomy that we must chose sides in war.
 
-The war is a peculiar situations where people in conflicting nations are always at loss. The economy of both nations are negatively impacted, and the development receds by few years at least. The childhood of children are lost, and the freedoms of people are greatly curtailed. It is only the arms industries who stand to gain in war.
+The war is a peculiar situation where people in conflicting nations are always at loss. The economy of both nations are negatively impacted, the development receds by few years at least, the childhood of children are lost, and the freedoms of people are greatly curtailed. It is only the arms industries who stand to gain in war.
 
 Supporting any of the sides means supporting the act of war despite knowing it consequences. Humanity can itself evolved when are are no wars.
