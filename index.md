@@ -13,5 +13,6 @@ layout: page
 ### Pages
 
 - [Fallacies](fallacies/)
+- [AI generated images](ai-generated-images)
 
 See [all pages](all-pages/).
