@@ -168,7 +168,7 @@ body
   --banner-height: 250px;
 }
 
-.image-embed[alt*="cc-banner"]
+.image-embed.cc-banner
 {
   max-height: var(--banner-height) !important;
   width: 100%;
@@ -177,22 +177,17 @@ body
   overflow: hidden;
 }
 
-.image-embed[alt*="cc-banner-start"]
+.image-embed.cc-banner-start
 {
   align-items: start;
 }
 
-.image-embed[alt*="cc-banner-end"]
+.image-embed.cc-banner-end
 {
   align-items: end;
 }
 
-.image-embed img[alt*="cc-banner"]
+.image-embed.cc-banner img
 {
  width: 100%;
-}
-
-.image-embed img[alt*="cc-banner-down"]
-{
- padding-top: min(25%, calc(25% - 100% + var(--banner-height)));
 }
