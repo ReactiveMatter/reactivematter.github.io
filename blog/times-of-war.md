@@ -14,16 +14,16 @@ In times of war, we often see people choosing one side or the other. Sometimes i
 During times of war, neutrality is looked as bad. The following are some famous quotes which puts light on this notion:
 
 > Neutrality helps the oppressor, never the victim.
-> - Elie Weisal
+> \- Elie Weisal
 
 > The darkest places in hell are reserved for those who maintain their neutrality in times of moral crisis.
-> - Dante Alighieri
+> \- Dante Alighieri
 
 > If you are neutral in situations of injustice, you have chosen the side of the oppressor. If an elephant has its foot on the tail of a mouse and you say that you are neutral, the mouse will not appreciate your neutrality.
-> - Desmond Tutu
+> \- Desmond Tutu
 
 > समर शेष है, नहीं पाप का भागी केवल व्याघ्र, जो तटस्थ हैं, समय लिखेगा उनका भी अपराध ।
-> - दिनकर 
+> \- दिनकर 
 > (War is still incomplete, only killers are not to be blamed for the sin. History will put the onus on bystander too).
 
 But the problem with this notion is that it reduces the options to choosing either of the side, when infact there as more options such as "condemn the act of war itself". It is a false dichotomy that we must chose sides in war.
