@@ -32,6 +32,7 @@ The list of blogs on the topic of {{ page.topic }} -
     {% if p.topic == page.topic %}
     {% assign to_include = true %}
     {% endif %}
+    {% assign topic_sentence = 'is about ' %}
     {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
     {% assign topic_sentence = topic_sentence  | append: p.topic %}
     {% assign topic_sentence = topic_sentence  | append: "'>" %}
