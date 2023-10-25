@@ -34,7 +34,7 @@ The list of blogs on the topic of {{ page.topic }} -
         {% endif %}
     {% endfor %}
 {% elsif p.topic %}
-    {% if topic == page.topic %}
+    {% if p.topic == page.topic %}
     {% assign to_include = true %}
     {% endif %}
     {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
