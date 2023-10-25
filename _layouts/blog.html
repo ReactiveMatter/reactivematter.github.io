@@ -28,9 +28,9 @@
     {% assign topics =  page.topics | sort %}
     {% for topic in topics %}
         {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
-        {% assign topic_sentence = topic_sentence  | append: topic %}
+        {% assign topic_sentence = topic_sentence  | append: topic | downcase %}
         {% assign topic_sentence = topic_sentence  | append: "'>" %}
-        {% assign topic_sentence = topic_sentence  | append: topic %}
+        {% assign topic_sentence = topic_sentence  | append: topic | downcase %}
         {% assign topic_sentence = topic_sentence  | append: "</a>" %}
         {% if forloop.index < last %}
            {% assign topic_sentence = topic_sentence | append: ", " %}
@@ -42,7 +42,7 @@
     {% endfor %}
 {% elsif page.topic %}
         {% assign topic_sentence = topic_sentence  | append: "<a class='topic-link' href='/topic/" %}
-        {% assign topic_sentence = topic_sentence  | append: page.topic %}
+        {% assign topic_sentence = topic_sentence  | append: page.topic | downcase %}
         {% assign topic_sentence = topic_sentence  | append: "'>" %}
         {% assign topic_sentence = topic_sentence  | append: page.topic %}
         {% assign topic_sentence = topic_sentence  | append: "</a>" %}
