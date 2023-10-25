@@ -31,7 +31,7 @@ During times of war, neutrality is looked as bad. The following are some famous 
 >
 > (War is still incomplete, only killers are not to be blamed for the sin. History will put the onus on bystander too).
 
-But the problem with this notion is that it reduces the options to choosing either of the side, when infact there as more options such as "condemn the act of war itself". It is a false dichotomy that we must chose sides in war.
+But the problem with this notion is that it reduces the options to choosing either of the side, when infact there are more options such as "condemn the act of war itself". It is a false dichotomy that we must chose sides in war.
 
 The war is a peculiar situation where people in conflicting nations are always at loss. The economy of both nations are negatively impacted, the development receds by few years at least, the childhood of children are lost, and the freedoms of people are greatly curtailed. It is only the arms industries who stand to gain in war.
 
