@@ -26,6 +26,7 @@ During times of war, neutrality is looked as bad. The following are some famous 
 > \- Desmond Tutu
 
 > समर शेष है, नहीं पाप का भागी केवल व्याघ्र, जो तटस्थ हैं, समय लिखेगा उनका भी अपराध ।
+>
 > \- दिनकर 
 >
 > (War is still incomplete, only killers are not to be blamed for the sin. History will put the onus on bystander too).
