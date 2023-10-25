@@ -18,6 +18,11 @@ body{
 /*--callout-border-width: 1px;*/
 }
 
+blockquote p
+{
+	font-size:18px;
+}
+
 h1.title {font-size: var(--inline-title-size);}
 h1 {font-size: var(--h1-size);}
 h2 {font-size: var(--h2-size);}
