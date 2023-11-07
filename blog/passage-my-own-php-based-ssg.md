@@ -1,5 +1,5 @@
 ---
-title: Passage: My own PHP based SSG
+title: 'Passage: My own PHP based SSG'
 layout: blog
 date: 2023-11-07
 topic: coding
