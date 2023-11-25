@@ -75,17 +75,15 @@ if(data.comment.length > 5*800)
 }
 
 
-let code = `Submitting comment`;
-jQuery("#comment-form-message").html(code);
 jQuery("#submit-comment").hide();
 
 jQuery.post("https://formsubmit.co/reactivematter@protonmail.com", data, function(response){
     console.log(response);
-    jQuery("#comment-form-message").html('');
-    jQuery(".comment-form").html('<p style="color:green">You comment has been submitted successfully</p><p class="text-muted">Thankyou for taking out time and sharing your comments with me.</p>');
-    setTimeout(function() {
-    jQuery(".comment-form").remove();
-    }, 7000);
 }, 'json');
+
+jQuery(".comment-form").html('<p style="color:green">You comment has been submitted successfully</p><p class="text-muted">Thankyou for taking out time and sharing your comments with me.</p>');
+setTimeout(function() {
+jQuery(".comment-form").remove();
+}, 7000);
     
 });
