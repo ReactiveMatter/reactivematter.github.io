@@ -75,14 +75,13 @@ if(data.comment.length > 5*800)
 }
 
 
-let code = `<div class="progress" style="height: 2em;" font-size:0.9em>
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%; color: #6c757d; background-color:#ddd;">Submitting comment</div>
-</div>`;
+let code = `Submitting comment`;
 jQuery("#comment-form-message").html(code);
 jQuery("#submit-comment").hide();
 
 jQuery.post("https://formsubmit.co/reactivematter@protonmail.com", data, function(response){
     console.log(response);
+    jQuery("#comment-form-message").html('');
     jQuery(".comment-form").html('<p style="color:green">You comment has been submitted successfully</p><p class="text-muted">Thankyou for taking out time and sharing your comments with me.</p>');
     setTimeout(function() {
     jQuery(".comment-form").remove();
