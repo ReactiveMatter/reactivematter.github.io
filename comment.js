@@ -61,6 +61,7 @@ data.email = jQuery("#email").val().trim();
 data.comment = jQuery("#comment-content").val().trim();
 data.posturl = jQuery("#url").val().trim();
 data.action = "comment";
+data._template = "table";
 
 if(data.name.length == 0 || data.uniquekey.length == 0 || data.comment.length == 0 || data.posturl.length == 0 )
 {
