@@ -58,9 +58,9 @@ let data = {};
 data.name = jQuery("#name").val().trim();
 data.uniquekey = jQuery("#uniquekey").val().trim();
 data.email = jQuery("#email").val().trim();
-data.comment = jQuery("#comment-content").val().trim();
 data.posturl = jQuery("#url").val().trim();
 data.action = "comment";
+data.comment = jQuery("#comment-content").val().trim();
 data._template = "table";
 
 if(data.name.length == 0 || data.uniquekey.length == 0 || data.comment.length == 0 || data.posturl.length == 0 )
@@ -76,15 +76,17 @@ if(data.comment.length > 5*800)
 }
 
 
+let code = `Submitting comment`;
+jQuery("#comment-form-message").html(code);
 jQuery("#submit-comment").hide();
 
 jQuery.post("https://formsubmit.co/reactivematter@protonmail.com", data, function(response){
     console.log(response);
+    jQuery("#comment-form-message").html('');
+    jQuery(".comment-form").html('<p style="color:green">You comment has been submitted successfully</p><p class="text-muted">Thankyou for taking out time and sharing your comments with me.</p>');
+    setTimeout(function() {
+    jQuery(".comment-form").remove();
+    }, 7000);
 }, 'json');
-
-jQuery(".comment-form").html('<p style="color:green">You comment has been submitted successfully</p><p class="text-muted">Thankyou for taking out time and sharing your comments with me.</p>');
-setTimeout(function() {
-jQuery(".comment-form").remove();
-}, 7000);
     
 });
