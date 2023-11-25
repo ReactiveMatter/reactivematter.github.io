@@ -197,3 +197,75 @@ code
 {
 	white-space: pre-wrap;
 }
+
+/* For comments */
+
+#comment
+{
+	cursor: pointer;
+}
+.container.comment-form
+{
+	display: block;
+	font-size: 16px;
+	padding-top:30px;
+	padding-bottom: 30px;;
+}
+.comment-form input, .comment-form textarea
+{
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+
+.comment-form input:focus, .comment-form textarea:focus
+{
+	outline: none;
+	border: 1px solid #aaa;
+}
+
+#name, #uniquekey, #email, #url, #comment-content
+{	
+	margin-top:10px;
+	margin-bottom: 10px;
+	padding: 10px 15px;
+
+}
+#name, #uniquekey, #email, #url
+{
+	width: 49%;
+}
+
+#comment-content
+{	
+	width:100%;
+	height: 200px;
+	min-height: 200px;
+}
+
+#submit-comment
+{
+	cursor: pointer;
+	opacity: 0.7;
+	border:1px solid #ccc;
+    opacity: 0.7;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#submit-comment:hover
+{
+	color:#333;
+	background: #fafafa;
+	opacity: 1;
+}
+
+
+.flex
+{
+	display: flex;
+}
+
+.space-between
+{
+	justify-content: space-between;
+}
