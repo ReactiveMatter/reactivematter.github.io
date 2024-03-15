@@ -11,7 +11,7 @@ What I wanted is to define user groups and then set different access to each gro
 
 Consider a common scenario where one would want the logged in users to enter data via a form. But the data is not visible to them. (This is the default setup in Google Sheets.) Another group (say manager) can edit and delete the data, and do analytics.
 
-For this reason, I created a middleware for PHP-CRUD-API. The middleware requires that each user must be a part of a group. Non-logged in users are by default part of the `all` group. The registered users are by default part of the `user` group.
+For this reason, I created a [middleware for PHP-CRUD-API](https://github.com/ReactiveMatter/php-crud-acl). The middleware requires that each user must be a part of a group. Non-logged in users are by default part of the `all` group. The registered users are by default part of the `user` group.
 
 A user having the usergroup `admin` can add new users using the `/register` API end, and can also change groups of the users.
 
