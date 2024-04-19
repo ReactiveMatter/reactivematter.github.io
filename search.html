@@ -225,20 +225,60 @@
 			query=query+" inurl:"+q;
 		}
 
+		let activeIncludedSites = []
+
 		includedsites.forEach(function(a)
 		{ if(a.active)
-			{
-				query=query+" site:"+a.site;
+			{	
+				activeIncludedSites.push(a.site);
 			}
 
 		});
+
+		for (var i = 0; i < activeIncludedSites.length; i++) {
+			if(i==0)
+			{
+				query+="(";
+			}
+			query=query+" site:"+activeIncludedSites[i];
+			
+			if(i<activeIncludedSites.length-1)
+			{
+				query+=" OR ";
+			}
+			else
+			{
+				query+=")";
+			}
+		}
+
+		let activeExcludedSites
+
 		excludedsites.forEach(function(a)
 		{	if(a.active)
 			{
-				query=query+" -site:"+a.site;
+				activeExcludedSites.push(a.site);
 			}
 
 		});
+
+		for (var i = 0; i < activeExcludedSites.length; i++) {
+			if(i==0)
+			{
+				query+="(";
+			}
+			
+			query=query+" -site:"+a.site;
+			
+			if(i<activeExcludedSites.length-1)
+			{
+				query+=" AND ";
+			}
+			else
+			{
+				query+=")";
+			}
+		}
 
 
 		if(document.querySelector("#file").checked)
