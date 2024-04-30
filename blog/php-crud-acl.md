@@ -26,7 +26,7 @@ The `permission` column hold the permission in an integer. The mapping of this v
 
 The permission integer is the sum of the each of the permission granted. For example, 15 has all the permissions, and 12 has only Update and Delete permissions. If the user is a part of multiple groups, the rule of ACL which grants access will override the one that prohibits access.
 
-Now, the catch here is the rules of ACL cannot be created by the API. It has to be created manually in the database (I am using [Adminer](https://www.adminer.org/) for this). The reason to not implement this in API is save my labour, and tools like Adminer provides a decent UI to do CRUD directly in database. I did not want to redo the functionality which will be used sparingly. In fact, the assigment and changing of groups can also be done directly in database.
+Now, the catch here is the rules of ACL cannot be created by the API. It has to be created manually in the database (I am using [Adminer](https://www.adminer.org/) for this). The reason to not implement this in API is to save my labour, and tools like Adminer provides a decent UI to do CRUD directly in database. I did not want to redo the functionality which will be used sparingly. In fact, the assigment and changing of groups can also be done directly in database.
 
 Things which are still remaining to be implemented:
 1. Remember me for persistent login
