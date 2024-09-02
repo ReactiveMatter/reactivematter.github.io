@@ -1,6 +1,6 @@
 body
 {	display: flex;
-	font-size:18px;
+	font-size:16px;
 	background: white;
 	flex-direction: column;
 	min-height: 100vh;
@@ -10,17 +10,17 @@ body
 
 
 body{
---inline-title-size: 2em;
---h1-size:1.75em;
---h2-size:1.4em;
---h3-size:1.25em;
+--inline-title-size: 1.5em;
+--h1-size:1.25em;
+--h2-size:1.1em;
+--h3-size:1.1em;
 --h4-size:1.1em;
 /*--callout-border-width: 1px;*/
 }
 
 blockquote p
 {
-	font-size:18px;
+	font-size:16px;
 }
 
 h1.title {font-size: var(--inline-title-size);}
