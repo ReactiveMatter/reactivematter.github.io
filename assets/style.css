@@ -8,6 +8,10 @@ body
 	padding: 0px !important;
 }
 
+body * 
+{
+	line-height: inherit;
+}
 
 body{
 --inline-title-size: 1.5em;
