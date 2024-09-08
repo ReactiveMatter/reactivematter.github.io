@@ -5,6 +5,9 @@ layout: page
 
 # My projects
 
+- [Tunnel CMS](/tunnel-cms): A simple and straight forward markdown CMS.
+- [Passage](https://github.com/ReactiveMatter/passage): A SSG in PHP.
+- [Tasks and events](https://github.com/ReactiveMatter/tasks-and-events):  Personal dashboard for managing tasks and events.
 - [Locker](/locker): To save passwords, notes and journals with encryption.
 - [Crypt](crypt): Encrypt and decrypt messages
 - [Search](search): Search modifiers on popular search engines
