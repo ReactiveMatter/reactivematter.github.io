@@ -3,11 +3,9 @@ title: Tunnel CMS
 layout: doc
 ---
 
-# Tunnel CMS
-
 Tunnel CMS is the simplest markdown CMS. It parses markdown files and renders html in real time whenever necessary. However, not every request requires parsing, as Tunnel CMS builds the HTML files and store in cache. Until, the underlying content of the markdown files is changed, the cached HTML is served.
 
-## 🛠️ Installation
+# 🛠️ Installation
 
 Download the `tunnel` folder along with the `.htaccess` file from the [Github directory](https://github.com/ReactiveMatter/tunnelcms) `https://github.com/ReactiveMatter/tunnelcms`.
 
@@ -17,7 +15,7 @@ If you don't want to use composer, download the [latest release](https://github.
 
 Tunnel CMS will render your markdown files dynamically, so that you can focus on writing.
 
-## 📝 YAML frontmatter
+# 📝 YAML frontmatter
 
 Tunnel CMS parses YAML front matter from the markdown files and serializes them in the `$page` variable. This can be used by the layout to display content.
 
@@ -29,7 +27,7 @@ Some useful page properties:
 | `tags` | Tags for the file |
 
 
-## 🖥️ Layout
+# 🖥️ Layout
 
 The layout files from `tunnel/layout` folder are used to render html content. The layout can be set in YAML front matter in `layout` property. `default.php` is used when no layout is set.
 
@@ -37,7 +35,7 @@ The `title` property can be set for the page title. If not set, the first headin
 
 If a layout requires the list of all parsed files, the function `get_all_pages()` can be called to get and array of pages. Each element will have properties (YAML front matter) set for that page.
 
-## 🏷️ Tags
+# 🏷️ Tags
 
 Files can be assigned tags using the front matter property `tags`. In addition to this, Tunnel CMS assigns tags if hash tags are detected in the file (e.g. `#tag1`).
 
@@ -53,7 +51,7 @@ It is suggested to build the entire site whenever any major changes are made to 
 
 💡Tip: The cached files can also be used as static site.
 
-## ⚙️ Config
+# ⚙️ Config
 
 Config variables are stored in `tunnel/config.php`. They are site wide variables used for the build process, and can also be used by the templates.
 
@@ -68,10 +66,10 @@ Config variables are stored in `tunnel/config.php`. They are site wide variables
 
 Custom variable can be defined in config file, which can be used in the layout files.
 
-## 📜 Feed
+# 📜 Feed
 
 If the a feed generating file exists at `tunnel/layout/feed.php`, it will be called during the `buildsite` process. The code for generating feeds can be included in this file.
 
-## License
+# License
 
 This project is licensed under the MIT License.
