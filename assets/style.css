@@ -278,3 +278,19 @@ footer .container {
 {
 	justify-content: space-between;
 }
+
+
+th
+{
+	text-align: left;
+}
+
+th, td {
+  padding: 0.25em 0.5em;
+  border: 1px solid #ddd;
+}
+
+td:first-child 
+{
+	text-wrap: nowrap;
+}
