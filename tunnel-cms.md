@@ -31,7 +31,11 @@ Some useful page properties:
 
 The layout files from `tunnel/layout` folder are used to render html content. The layout can be set in YAML front matter in `layout` property. `default.php` is used when no layout is set.
 
-The `title` property can be set for the page title. If not set, the first heading in the markdown file is set as title.
+All properties set in the `config.php` are available in layout files. All properties set in YAML front matter of the page being rendered are available in `$page` variable.
+
+`$page['title']` contains the title of the page. The `title` property can be set for the page title. If not set, the first heading in the markdown file is set as title.
+
+`$page['content']` contains the HTML obtained after parsing the page's markdown content.
 
 If a layout requires the list of all parsed files, the function `get_all_pages()` can be called to get and array of pages. Each element will have properties (YAML front matter) set for that page.
 
