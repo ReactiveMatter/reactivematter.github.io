@@ -4,13 +4,7 @@ body
 	background: white;
 	flex-direction: column;
 	min-height: 100vh;
-	line-height: 1.5;
 	padding: 0px !important;
-}
-
-body * 
-{
-	line-height: inherit;
 }
 
 body{
