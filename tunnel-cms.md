@@ -15,6 +15,8 @@ If you don't want to use composer, download the [latest release](https://github.
 
 Tunnel CMS will render your markdown files dynamically, so that you can focus on writing.
 
+💡Tip: You can rename `tunnel` folder to any name you like. Do make sure to change the `.htaccess` file accordingly to route all requests to that folder.
+
 # 📝 YAML frontmatter
 
 Tunnel CMS parses YAML front matter from the markdown files and serializes them in the `$page` variable. This can be used by the layout to display content.
