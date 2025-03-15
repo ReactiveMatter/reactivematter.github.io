@@ -1,5 +1,5 @@
 ---
-title: 'Tunnel 2.0 and SSG'
+title: 'Tunnel CMS 2.0 and SSG'
 layout: blog
 date: 2025-03-15
 topic: coding
