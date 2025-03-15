@@ -2,20 +2,15 @@
 title: Tunnel CMS 
 layout: doc
 ---
+Version:v2.0.0 (Updated on 15.03.2025)
 
-Tunnel CMS is the simplest markdown CMS. It parses markdown files and renders html in real time whenever necessary. However, not every request requires parsing, as Tunnel CMS builds the HTML files and store in cache. Until, the underlying content of the markdown files is changed, the cached HTML is served.
+Tunnel CMS is the simplest markdown CMS. It parses markdown files and outputs html in real time whenever necessary. However, not every request requires parsing, as Tunnel CMS builds the HTML files and store in cache. Until, the underlying content of the markdown files is changes, the cached HTML is served.
 
 # 🛠️ Installation
 
-Download the `tunnel` folder along with the `.htaccess` file from the [Github directory](https://github.com/ReactiveMatter/tunnelcms) `https://github.com/ReactiveMatter/tunnelcms`.
-
-Place them in the root of your website, and run `composer install` in `tunnel` directory.
-
-If you don't want to use composer, download the [latest release](https://github.com/ReactiveMatter/tunnelcms/releases/tag/public) and place contents in the root of your website.
+Download the `tunnel` folder along with the `.htaccess` file from the [Github directory](https://github.com/ReactiveMatter/tunnelcms) `https://github.com/ReactiveMatter/tunnelcms`. Place them in the root of your website, and that's it!
 
 Tunnel CMS will render your markdown files dynamically, so that you can focus on writing.
-
-💡Tip: You can rename `tunnel` folder to any name you like. Do make sure to change the `.htaccess` file accordingly to route all requests to that folder.
 
 # 📝 YAML frontmatter
 
@@ -26,62 +21,59 @@ Some useful page properties:
 | Property | Description |
 | --- | --- |
 | `layout` | Sets the layout for the file which will be used for rendering HTML. |
+| `category` | Sets the category for the file. One page can have only one category.|
 | `tags` | Tags for the file |
 
 
-# 🖥️ Layout
+# 🖥️ Template and layout
 
-The layout files from `tunnel/layout` folder are used to render html content. The layout can be set in YAML front matter in `layout` property. `default.php` is used when no layout is set.
+The layout files from `template` folder are used to render html content. The layout can be set in YAML front matter in `layout` property. `default.php` is used when no layout is set.
 
-All properties set in the `config.php` are available in layout files. All properties set in YAML front matter of the page being rendered are available in `$page` variable.
+The `title` property can be set for the page title. If not set, the first heading in the markdown file is set as title.
 
-`$page['title']` contains the title of the page. The `title` property can be set for the page title. If not set, the first heading in the markdown file is set as title.
-
-`$page['content']` contains the HTML obtained after parsing the page's markdown content.
-
-If a layout requires the list of all parsed files, the function `get_all_pages()` can be called to get and array of pages. Each element will have properties (YAML front matter) set for that page.
+If a layout requires the list of all parsed files, the function `get_all_pages()` can be called. It returns an array of pages. Each element will have properties set for that page.
 
 # 🏷️ Tags
 
-Files can be assigned tags using the front matter property `tags`. In addition to this, Tunnel CMS assigns tags if hash tags are detected in the file (e.g. `#tag1`).
+Files can be assigned tags using the front matter property `tags`. In addition to this, Tunnel CMS assigns tags if hash tags are given in the file (e.g. `#tag1`).
 
-A line in file which contains only hash tags is removed while rendering.
+# 💾 Cache
 
-## 📄 Content
+Tunnel CMS stores the rendered HTML files and associated metadata in `cache` folder. Whenever a file is requested for the first time, a build processes in initiated. In the build process, front matter is processed, the HTML content is generated and saved as HTML files in `cache`. 
 
-Content can be written in Markdown. As Tunnel CMS is based on [Parsedown](https://parsedown.org/), all formatting supported by Parsedown can be used.
+The file `content` and `template` directory hashes, and file _mtime_ are saved in metadata (a json file).
 
-For using internal markdown links (relative to site directory), prepend `$` to the link. E.g. `[blog]($/blog)`. The site directory is automatically prepended before the link.
-
-## 💾 Cache
-
-Tunnel CMS stores the rendered HTML files in `tunnel/site` folder with the directory structure same as the root folder. Whenever a file is requested for the first time, a build process in initiated. In the build process, front matter is processed, the HTML content is generated from markdown and saved as HTML files in `tunnel/site`. The file modified time (mtime) and the build time (btime) is entered into an SQLite database (`tunnel/build.db`). If the file modified time does not change, the files from `tunnel/site` are served on request. As and when the file modified time changes, the build process is again initiated.
-
-The build process can be forced by supplying the `?build` parameter in the request. No, value is required for this parameter. To build the entire site, `?buildsite` parameter may be supplied.
-
-It is suggested to build the entire site whenever any major changes are made to the content. Further, the building of site would be required if template files are changed.
-
-💡Tip: The cached files can also be used as static site.
+As and when the file modified time changes, the build process is again initiated.
 
 # ⚙️ Config
 
-Config variables are stored in `tunnel/config.php`. They are site wide variables used for the build process, and can also be used by the templates.
+Config variable are stored in `config.php`. They are site wide variables used for the build process, and can also be used by the templates.
 
 | Config variable | Description |
 | --- | --- |
 | `$site['title']` | Site title |
 | `$site['ext']` | The file extensions which will be parsed |
-| `$site['default']['layout']` | The default layout for parsing. If set to `page`, `tunnel/layout/page.php` will be used.|
-| `$site['default']['title']` | Default title. Will be used if not title is available in the file. |
-| `$site['build-drafts']` | Whether to build files tagged as `draft` |
-| `$site['date-format']` | The PHP date display format. To be used in layouts.|
+| `$site['default_layout']` | The default layout for parsing. If set to `page`, `template/page.php` will be used.|
+| `$site['date_format']` | The PHP date display format. To be used in layouts.|
 
-Custom variable can be defined in config file, which can be used in the layout files.
+Custom variable can be defined in config file, which can be used in the template files.
 
-# 📜 Feed
+# Links
 
-If a feed generating file exists at `tunnel/layout/feed.php`, it will be called during the `buildsite` process. The code for generating feeds can be included in this file.
+By default markdown links are relative to http root (`/about`). However, to make it relative to Tunnel CMS directory use `$/about`. 
+
+# Workings
+
+The detailed process and control flow is provided in [workings](workings).
 
 # License
 
 This project is licensed under the MIT License.
+
+# Credits
+
+Tunnel CMS is developed by ReactiveMatter.
+
+Github repo: https://github.com/ReactiveMatter/
+
+Github blog: https://reactivematter.github.io/
