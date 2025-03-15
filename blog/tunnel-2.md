@@ -7,7 +7,7 @@ topic: coding
 
 [Tunnel CMS](https://github.com/ReactiveMatter) is a minimalistic markdown based CMS. This weekend, I have rewritten the CMS and evolved it into Tunnel CMS 2.0.
 
-The reason of rewriting is one of the persistence dilemma in choosing a CMS. Whether to use a Static Site Generator (SSG) or use a dynamic CMS. Both have its pros and cons:
+The reason for rewriting is a persistent dilemma in choosing a CMS. Whether to use a Static Site Generator (SSG) or use a dynamic CMS. Both have its pros and cons:
 
 | Feature                | Static Site Generator (SSG)            | Dynamic CMS                      |
 |------------------------|---------------------------------|--------------------------------|
