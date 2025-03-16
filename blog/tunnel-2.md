@@ -18,7 +18,7 @@ The reason for rewriting is a persistent dilemma in choosing a CMS. Whether to u
 | **Interactivity**      | Limited; requires JS for dynamic features | Fully dynamic (forms, comments, search, etc.) |
 | **Update Process**     | Requires site rebuild on content change | Instant updates via admin panel |
 
-While SSG approach is excellent, but the deployment process is quite cumbersome and not quick. You need to generate static files and then deploy them to the server using SSH or FTP. Similarly, to add content, you must have the access to your source on your primary device, where the the build process happen. Updating from mobile phone is a big hassle. Surely, there are ways like using git and auto deploy. For one user, this is still manageable, but when in team it just too out of reach of everyone.
+While SSG approach is excellent, the deployment process is quite cumbersome and not quick. You need to generate static files and then deploy them to the server using SSH or FTP. Similarly, to add content, you must have the access to your source on your primary device, where the the build process happen. Updating from mobile phone is a big hassle. Surely, there are ways like using git and auto deploy. For one user, this is still manageable, but when in team it is just too out of reach of everyone.
 
 Full fledged CMS, though great with UI and admin panels, are a security hazard and quite slow. Every CMS requires the user to login and manage content via web. So they must really work hard to make it secure and it requires constant efforts. The big CMS do well in this regard, but ultimately becomes bloated and slow. Also the setup processes are becoming more and more difficult with time. Gone are the days where you just put a php file on server and it works. But web based CMS are excellent when in team.
 
@@ -31,7 +31,7 @@ Tunnel CMS does not restrict in anyway what you can do with your website. It is 
 
 # Why 2.0 ?
 
-Tunnel CMS 1.0 was rather very very simple. It used to create static HTML files on the server from the content, and then server these static files whenever required. The build process had to be manually initiated. All code base was unstructured with everything happening inside a build.php file. And there was no option to have a truly dynamic site. Further, the content was in the root and the CMS files were in a subfolder except for the index.php file, resulting in no clear separation between content and CMS files.
+Tunnel CMS 1.0 was rather very very simple. It used to create static HTML files on the server from the content, and then serve these static files whenever required. The build process had to be manually initiated. All code base was unstructured with everything happening inside a build.php file. And there was no option to have a truly dynamic site. Further, the content was in the root and the CMS files were in a subfolder except for the index.php file, resulting in no clear separation between content and CMS files.
 
 Tunnel CMS 2.0 first and foremost ensure better code organisation. The markdown content is kept in a separate content folder and the public assets in a separate assets folder. Markdown content cannot be accessed directly.
 
