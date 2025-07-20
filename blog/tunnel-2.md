@@ -5,7 +5,7 @@ date: 2025-03-15
 topic: coding
 ---
 
-[Tunnel CMS](https://github.com/ReactiveMatter) is a minimalistic markdown based CMS. This weekend, I have rewritten the CMS and evolved it into Tunnel CMS 2.0.
+[Tunnel CMS](https://github.com/ReactiveMatter/tunnelcms) is a minimalistic markdown based CMS. This weekend, I have rewritten the CMS and evolved it into Tunnel CMS 2.0.
 
 The reason for rewriting is a persistent dilemma in choosing a CMS. Whether to use a Static Site Generator (SSG) or use a dynamic CMS. Both have its pros and cons:
 
