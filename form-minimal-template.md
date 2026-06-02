@@ -5,13 +5,14 @@ layout: page
 
 <div class="container url-form">
 <p>If your website is using Minimal or Retro template for Dokuwiki, you may share your website with the developer.</p>
-<div class="flex space-between">
-<input id="url" placeholder="Your website url" required></input>
+<div class="flex">
+<input id="url" placeholder="Your website url" required>
 </div>
 </div>
-<div id="url-form-message" class="mb-3">
+<div id="url-form-message" class="mb-3" style="font-size: 0.9em;">
 </div>
-<span id="submit-url" class="unselectable">Submit comment</span>
+<span id="submit-url" class="unselectable" style="border:1px solid #ccc;padding: 5px 10px;
+  border-radius: 3px;cursor: pointer;">Submit comment</span>
 
 <script>
 jQuery("body").on("click", "#submit-url",function(){
