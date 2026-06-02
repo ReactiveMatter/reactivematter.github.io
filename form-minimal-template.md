@@ -6,7 +6,7 @@ layout: page
 <div class="container url-form">
 <p>If your website is using Minimal or Retro template for Dokuwiki, you may share your website with the developer.</p>
 <div class="flex">
-<input id="url" placeholder="Your website url" onfocus="this.style.outline='none';" required>
+<input id="url" placeholder="Your website url" onfocus="this.style.outline='none';" style="width:100%;" required>
 </div>
 </div>
 <div id="url-form-message" class="mb-3" style="font-size: 0.9em;">
